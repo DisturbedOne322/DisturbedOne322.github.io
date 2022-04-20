@@ -13,45 +13,47 @@
             <strong>You will now be redirected to another page!</strong> Have a good time!.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    <!--main content-->
+        <!--main content-->
 
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-font">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-font">
             <div class="container-fluid">
                 <img class="navbar-brand avatar" width="75" src="me.png">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Main Page</a>
-                    <a class="nav-link" href="about.html">About Me</a>
-                    <a class="nav-link" href="hobbies.html">My Hobbies</a>
-                    <a class="nav-link" href="experience.html">My Experience</a>
-                </div>
-                </div>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link active" aria-current="page" href="#" id="mainpage">Main Page</a>
+                            <a class="nav-link" href="about.html" id="aboutme">About Me</a>
+                            <a class="nav-link" href="hobbies.html" id="myhobbies">My Hobbies</a>
+                            <a class="nav-link" href="experience.html" id="myexperience">My Experience</a>
+                        </div>
+                    </div>
+                <a href="#eng" data-reload><img src="english.png"  class="justify-content-end" style="width:45px; margin-right:30px"/></a>
+                <a href="#ua" id="button" data-reload><img src="ukrainian.png" class="justify-content-end" style="width:45px; margin-right:30px"/></a>
             </div>
         </nav>
         <div class="name-banner">
-            <p>Andrianov Yaroslav</p>
+            <p  id="name">Andrianov Yaroslav</p>
         </div>
         <br>
         <div class="container main-div">
 
             <div class="row table-head">
-                <div class="col">What can I do?</div>
-                <div class="col">What do I *know*?</div>
+                <div class="col" id="whatcanido">What can I do?</div>
+                <div class="col" id="whatdoiknow">What do I *know*?</div>
             </div>
 
             <div class="row">
                 <div class="col">
                     <ul class="list-group">
-                        <li class="list-group-item ">
+                        <li class="list-group-item" id="createsites">
                             Create websites and web applications with the Flask framework
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item" id="createdesktopapps">
                             Create desktop applications with WPF framework
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item" id="createmobileapps">
                             Create mobile applications with Xamarin.Forms
                         </li>
                     </ul>
@@ -75,24 +77,93 @@
             </div>
 
             <div class="row justify-content-start table-head">
-                <div class="col">IRL skills I posses</div>
-                <div class="col">Currently learning...</div>
+                <div class="col" id="irlskills">IRL skills I posses</div>
+                <div class="col" id="currentlylearning">Currently learning...</div>
             </div>
             <div class="row justify-content-start">
                 <div class="col">
                     <ul class="list-group">
-                        <li class="list-group-item ">
+                        <li class="list-group-item" id="skills">
                             At the moment I know 3 languages: English, Russian and Ukrainian. Planning to start learning Czech soon. I consider myself diligent, honest, willing to learn and friendly, capable of team work.  
                         </li>
                 </div>
                     <div class="col">
                         <ul class="list-group">
-                            <li class="list-group-item ">
+                            <li class="list-group-item" id="learning">
                                 Unity and let`s be honest, I don`t *know everything* of the above, but I indeed continue studying. I am improving my problem solving skills and logical thinking
                             </li>
                     </div>
             </div>
-            <div class="col" style="margin: 20px;"><a href="about.html" class="btn btn-primary anim" >About me →</a></div>
+            <div class="col" style="margin: 20px;"><a href="about.html" class="btn btn-primary anim" id="aboutbutton">About me →</a></div>
         </div>
+        
+        <!--language change script-->
+        <script>
+            var dataReload = document.querySelectorAll("[data-reload]");
+            let language = {
+                eng:{
+                    name : "Andrianov Yaroslav",
+                    mainpage : "Main Page",
+                    aboutme : "About Me",
+                    myhobbies :"My Hobbies",
+                    myexperience : "My Experience",
+                    whatcanido : "What can I do?",
+                    whatdoiknow: "What do I *know*?",
+                    createsites : "Create websites and web applications with the Flask framework",
+                    createdesktopapps: "Create desktop applications with WPF framework",
+                    createmobileapps: "Create mobile applications with Xamarin.Forms",
+                    irlskills: "IRL skills I posses",
+                    currentlylearning: "Currently learning...",
+                    skills: "At the moment I know 3 languages: English, Russian and Ukrainian. Planning to start learning Czech soon. I consider myself diligent, honest, willing to learn and friendly, capable of team work.",
+                    learning: "Unity and let`s be honest, I don`t *know everything* of the above, but I indeed continue studying. I am improving my problem solving skills and logical thinking",
+                    aboutbutton: "About me →"
+                },
+                ua:{
+                    name : "Андріанов Ярослав",
+                    mainpage : "Головна сторінка",
+                    aboutme : "Про мене",
+                    myhobbies: "Мої Хоббі",
+                    myexperience : "Мій Досвід",
+                    whatcanido : "Що я можу?",
+                    whatdoiknow: "Що я *знаю*?",
+                    createsites : "Створювати веб сторінки і веб додатки за допомогою фреймворку Flask",
+                    createdesktopapps: "Створювати десктоп додатки за допомогою фреймворку WPF",
+                    createmobileapps: "Створювати мобільні додатки за допомогою фреймворку Xamarin.Forms",
+                    irlskills: "ІРЛ навички",
+                    currentlylearning: "На даний момент вивчаю...",
+                    skills: "На даний момент я вільно володію трьома мовами: Англійською, російською та Українською. Планую почати вчити Чеську мову. Я вважаю себе наполегливим, чесним, дружнім, маю бажання вчитися, здатний працювати у команді.",
+                    learning: "Unity і, якщо бути чесним, я не *знаю все* з переліченого зверху, але я насправді продовжую вивчати. Я покращую мої навички вирішення проблем та логічне мислення.",
+                    aboutbutton: "Про мене →"
+                }
+            };
+
+            if (window.location.hash)
+            {
+                if(window.location.hash === "#ua")
+                {
+                    document.getElementById("name").textContent = language.ua.name;
+                    document.getElementById("mainpage").textContent = language.ua.mainpage;
+                    document.getElementById("aboutme").textContent = language.ua.aboutme;
+                    document.getElementById("myhobbies").textContent = language.ua.myhobbies;
+                    document.getElementById("myexperience").textContent = language.ua.myexperience;
+                    document.getElementById("whatcanido").textContent = language.ua.whatcanido;
+                    document.getElementById("whatdoiknow").textContent = language.ua.whatdoiknow;
+                    document.getElementById("createsites").textContent = language.ua.createsites;
+                    document.getElementById("createdesktopapps").textContent = language.ua.createdesktopapps;
+                    document.getElementById("createmobileapps").textContent = language.ua.createmobileapps;
+                    document.getElementById("irlskills").textContent = language.ua.irlskills;
+                    document.getElementById("currentlylearning").textContent = language.ua.currentlylearning;
+                    document.getElementById("skills").textContent = language.ua.skills;
+                    document.getElementById("learning").textContent = language.ua.learning;
+                    document.getElementById("aboutbutton").textContent = language.ua.aboutbutton
+                }
+            }
+            for(let i = 0; i <= dataReload.length; i++)
+            {
+                dataReload[i].onclick = function(){
+                    window.location.reload(true);
+                };
+            }
+        </script>
     </body>
 </html>
