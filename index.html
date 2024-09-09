@@ -216,7 +216,7 @@
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto" style="width: 100%;">
               <h3 class="mb-0">Racing AI</h3>
-              <p>Racing AI</p>
+              <p>AI made with context-based steering algorithm</p>
               <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Tk_j7jt_fMw?si=BKOyflB8ozsiD2Kw" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
@@ -238,6 +238,36 @@
             </div>
           </div>
         </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto" style="width: 100%;">
+            <h3 class="mb-0">Vehicle Damage System</h3>
+            <p>Vehicle damage system with mesh deformation and other effects</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ErYNCIz7jG4?si=CixS5a2cI9TJyxpF" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <br>
+            <h5 class="mb-1">Short Description:</h5>
+            <p>I made an update for my vehicle physics package that added a vehicle damage system with mesh deformation and individual parts damage system.
+              The mesh is deformed based on collision points and parameters set by the user that define the effect of deformation. Deformation is performed by finding and modifying the position of the vertices near the impact zone.
+              The algorithm uses multithreading with the Jobs System. Optionally, the user can also define possible collision areas and store the indexes of vertices that belong to each area. When the collision occurs, 
+              the code find in what area the collision occured and modifies only the vertices inside it, therefore lowering the amount of work that needs to be done.
+              Vehicle part damage is another system, which controls the hit points of parts and makes them dangle and/or detach with certain conditions.</p>
+            <h5 class="mb-1">Skills learned:</h5>
+            <ul class="fa-ul mb-0">
+              <li>
+                <i class="fa-li fa fa-circle"></i>
+                Mesh Deformation</li>
+              <li>
+                <i class="fa-li fa fa-circle"></i>
+                Job System (basics)</li>
+            </ul>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">May 2024 - June 2024</span>
+          </div>
+        </div>
+      </div>
 
       </section>
 
