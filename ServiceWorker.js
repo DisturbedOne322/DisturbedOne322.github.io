@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-Trust Wallet-1.0.0";
 const contentToCache = [
     "Build/web.loader.js",
-    "Build/web.framework.js.unityweb",
-    "Build/web.data.unityweb",
-    "Build/web.wasm.unityweb",
+    "Build/web.framework.js",
+    "Build/web.data",
+    "Build/web.wasm",
     "TemplateData/style.css"
 
 ];
