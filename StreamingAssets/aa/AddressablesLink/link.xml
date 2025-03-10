@@ -25,21 +25,19 @@
     <type fullname="CryptoSelectionButton" preserve="all" />
     <type fullname="Crystal.SafeArea" preserve="all" />
     <type fullname="DefaultAccountDataSO" preserve="all" />
+    <type fullname="DisableIfWebGL" preserve="all" />
     <type fullname="EncryptionKeyConfig" preserve="all" />
     <type fullname="FakeScreen" preserve="all" />
     <type fullname="FooterButton" preserve="all" />
+    <type fullname="KeyboardRepositioner" preserve="all" />
     <type fullname="MainMenuButtons" preserve="all" />
-    <type fullname="MarksAssets.ScreenOrientationWebGL.ScreenOrientationWebGL" preserve="all" />
     <type fullname="MenuButton" preserve="all" />
     <type fullname="NumberInputButton" preserve="all" />
     <type fullname="PasswordSlot" preserve="all" />
     <type fullname="TransactionDateDisplay" preserve="all" />
     <type fullname="TransactionDisplay" preserve="all" />
     <type fullname="TransactionFeeConfig" preserve="all" />
-    <type fullname="UploaderConfig" preserve="all" />
-    <type fullname="WebGLRotateOnOrientationChange" preserve="all" />
     <type fullname=".InputAnimationParameters" preserve="nothing" serialized="true" />
-    <type fullname="MarksAssets.ScreenOrientationWebGL.ScreenOrientationWebGL/UnityEventInt" preserve="nothing" serialized="true" />
     <type fullname=".CryptoDataCode" preserve="nothing" serialized="true" />
     <type fullname=".TransactionData" preserve="nothing" serialized="true" />
     <type fullname="Application.Services.UserData.PossesedCrypto" preserve="nothing" serialized="true" />
@@ -77,15 +75,14 @@
   <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.GameObject" preserve="all" />
     <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.MonoBehaviour" preserve="all" />
     <type fullname="UnityEngine.Object" preserve="all" />
     <type fullname="UnityEngine.RectTransform" preserve="all" />
     <type fullname="UnityEngine.Shader" preserve="all" />
     <type fullname="UnityEngine.Sprite" preserve="all" />
     <type fullname="UnityEngine.Texture2D" preserve="all" />
     <type fullname="UnityEngine.Transform" preserve="all" />
-    <type fullname="UnityEngine.Events.ArgumentCache" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.Events.PersistentListenerMode" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
   </assembly>
