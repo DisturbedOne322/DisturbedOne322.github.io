@@ -22,6 +22,7 @@
     <type fullname="Core.UI.TransactionProcessingPopup" preserve="all" />
     <type fullname="CryptoAPIDataUpdaterConfig" preserve="all" />
     <type fullname="CryptoDataProviderAPIConfig" preserve="all" />
+    <type fullname="CryptoIconsConfig" preserve="all" />
     <type fullname="CryptoSelectionButton" preserve="all" />
     <type fullname="Crystal.SafeArea" preserve="all" />
     <type fullname="DefaultAccountDataSO" preserve="all" />
