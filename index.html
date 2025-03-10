@@ -49,6 +49,33 @@
       <div id="unity-warning"> </div>
     </div>
     <script>
+      // Detect if the platform is iOS
+      function isIOS() {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      }
+
+      // Prevent iOS from resizing the viewport when the keyboard opens
+      function setupViewportForIOS() {
+        const viewport = document.querySelector('meta[name="viewport"]');
+        const originalViewportContent = viewport.content;
+
+        window.addEventListener('focusin', () => {
+          // Keyboard is about to open
+          viewport.content = originalViewportContent + ', height=' + window.innerHeight + 'px';
+        });
+
+        window.addEventListener('focusout', () => {
+          // Keyboard is about to close
+          viewport.content = originalViewportContent;
+        });
+      }
+
+      // Apply platform-specific fixes
+      if (isIOS()) {
+        setupViewportForIOS();
+      }
+
+      // Service Worker registration
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
           navigator.serviceWorker.register("ServiceWorker.js");
@@ -93,7 +120,7 @@
         showBanner: unityShowBanner,
       };
 
-      loadingBar.style.display = "none";
+      loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
