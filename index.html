@@ -73,18 +73,22 @@
         return "other";
       }
 
-      // Platform-specific adjustments
-      function applyPlatformSpecificStyles() {
+      // Adjust layout for keyboard
+      function adjustLayoutForKeyboard() {
         const platform = detectPlatform();
+        const container = document.querySelector("#unity-container");
+        const canvas = document.querySelector("#unity-canvas");
 
         if (platform === "android") {
-          // Android-specific adjustments (if needed)
-          console.log("Running on Android");
+          // Android: Prevent viewport resizing
+          window.addEventListener("resize", function () {
+            container.style.height = window.innerHeight + "px";
+            canvas.style.height = window.innerHeight + "px";
+          });
         } else if (platform === "ios") {
-          // iOS-specific adjustments (if needed)
-          console.log("Running on iOS");
-        } else {
-          console.log("Running on another platform");
+          // iOS: Prevent scrolling when the keyboard appears
+          document.body.style.overflow = "hidden";
+          document.documentElement.style.overflow = "hidden";
         }
       }
 
@@ -94,7 +98,7 @@
           navigator.serviceWorker.register("ServiceWorker.js");
         }
 
-        applyPlatformSpecificStyles();
+        adjustLayoutForKeyboard();
       });
 
       var container = document.querySelector("#unity-container");
@@ -142,7 +146,7 @@
         document.getElementsByTagName('head')[0].appendChild(meta);
       }
 
-      loadingBar.style.display = "block";
+      loadingBar.style.display = "none";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -156,17 +160,6 @@
         });
       };
       document.body.appendChild(script);
-
-      // Handle resize and orientation changes
-      window.addEventListener('resize', function() {
-        container.style.height = window.innerHeight + 'px';
-        canvas.style.height = window.innerHeight + 'px';
-      });
-
-      window.addEventListener('orientationchange', function() {
-        container.style.height = window.innerHeight + 'px';
-        canvas.style.height = window.innerHeight + 'px';
-      });
     </script>
   </body>
 </html>
