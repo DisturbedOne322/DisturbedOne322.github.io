@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes, interactive-widget=resizes-content">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <title>Unity Web Player | Trust Wallet</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -15,6 +15,8 @@
         padding: 0;
         overflow: hidden;
         height: 100%;
+        width: 100%;
+        position: fixed; /* Prevent scrolling on iOS */
       }
 
       #unity-container {
@@ -127,15 +129,19 @@
       };
       document.body.appendChild(script);
 
-      window.addEventListener('resize', function() {
-        container.style.height = window.innerHeight + 'px';
-        canvas.style.height = window.innerHeight + 'px';
-      });
+      // Handle iOS viewport and resizing issues
+      function updateCanvasSize() {
+        canvas.width = window.innerWidth * window.devicePixelRatio;
+        canvas.height = window.innerHeight * window.devicePixelRatio;
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = window.innerHeight + "px";
+      }
 
-      window.addEventListener('orientationchange', function() {
-        container.style.height = window.innerHeight + 'px';
-        canvas.style.height = window.innerHeight + 'px';
-      });
+      window.addEventListener("resize", updateCanvasSize);
+      window.addEventListener("orientationchange", updateCanvasSize);
+
+      // Initial size update
+      updateCanvasSize();
     </script>
   </body>
 </html>
