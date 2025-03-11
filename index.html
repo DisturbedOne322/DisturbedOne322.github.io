@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=no, interactive-widget=resizes-content">
     <title>Unity Web Player | Trust Wallet</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -15,41 +15,20 @@
         padding: 0;
         overflow: hidden;
         height: 100%;
-        width: 100%;
-        position: fixed; /* Prevent scrolling on iOS */
       }
-
+    
       #unity-container {
         position: fixed;
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #000; /* Optional: Set a background color */
       }
-
+    
       #unity-canvas {
         width: 100%;
         height: 100%;
         display: block;
-        touch-action: none;
-      }
-
-      #unity-loading-bar {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      #unity-warning {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
       }
 
       /* Hide the duplicated input field */
@@ -60,7 +39,7 @@
   </head>
   <body>
     <div id="unity-container">
-      <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -114,7 +93,7 @@
         showBanner: unityShowBanner,
       };
 
-      loadingBar.style.display = "block";
+      loadingBar.style.display = "none";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -128,20 +107,6 @@
         });
       };
       document.body.appendChild(script);
-
-      // Handle iOS viewport and resizing issues
-      function updateCanvasSize() {
-        canvas.width = window.innerWidth * window.devicePixelRatio;
-        canvas.height = window.innerHeight * window.devicePixelRatio;
-        canvas.style.width = window.innerWidth + "px";
-        canvas.style.height = window.innerHeight + "px";
-      }
-
-      window.addEventListener("resize", updateCanvasSize);
-      window.addEventListener("orientationchange", updateCanvasSize);
-
-      // Initial size update
-      updateCanvasSize();
     </script>
   </body>
 </html>
