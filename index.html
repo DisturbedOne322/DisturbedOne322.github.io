@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=no, interactive-widget=resizes-content">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Unity Web Player | Trust Wallet</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
-
     <style>
       html, body {
         margin: 0;
@@ -16,30 +15,43 @@
         overflow: hidden;
         height: 100%;
       }
-    
+
       #unity-container {
         position: fixed;
-        width: 100%;
-        height: 100%;
         top: 0;
         left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000; /* Optional: Set a background color */
       }
-    
+
       #unity-canvas {
         width: 100%;
         height: 100%;
-        display: block;
+        touch-action: none;
       }
 
-      /* Hide the duplicated input field */
-      .unity-hidden-input {
-        display: none !important;
+      #unity-loading-bar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #unity-warning {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
       }
     </style>
   </head>
   <body>
     <div id="unity-container">
-      <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -49,33 +61,6 @@
       <div id="unity-warning"> </div>
     </div>
     <script>
-      // Detect if the platform is iOS
-      function isIOS() {
-        return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-      }
-
-      // Prevent iOS from resizing the viewport when the keyboard opens
-      function setupViewportForIOS() {
-        const viewport = document.querySelector('meta[name="viewport"]');
-        const originalViewportContent = viewport.content;
-
-        window.addEventListener('focusin', () => {
-          // Keyboard is about to open
-          viewport.content = originalViewportContent + ', height=' + window.innerHeight + 'px';
-        });
-
-        window.addEventListener('focusout', () => {
-          // Keyboard is about to close
-          viewport.content = originalViewportContent;
-        });
-      }
-
-      // Apply platform-specific fixes
-      if (isIOS()) {
-        setupViewportForIOS();
-      }
-
-      // Service Worker registration
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
           navigator.serviceWorker.register("ServiceWorker.js");
@@ -120,6 +105,13 @@
         showBanner: unityShowBanner,
       };
 
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      }
+
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
@@ -134,6 +126,16 @@
         });
       };
       document.body.appendChild(script);
+
+      window.addEventListener('resize', function() {
+        container.style.height = window.innerHeight + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+      });
+
+      window.addEventListener('orientationchange', function() {
+        container.style.height = window.innerHeight + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+      });
     </script>
   </body>
 </html>
