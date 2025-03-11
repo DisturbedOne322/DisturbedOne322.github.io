@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=no, interactive-widget=resizes-content">
     <title>Unity Web Player | Trust Wallet</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
+
     <style>
       html, body {
         margin: 0;
@@ -15,7 +16,7 @@
         overflow: hidden;
         height: 100%;
       }
-
+    
       #unity-container {
         position: fixed;
         top: 0;
@@ -25,13 +26,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #000; /* Optional: Set a background color */
       }
-
+    
       #unity-canvas {
         width: 100%;
         height: 100%;
-        touch-action: none;
+        display: block;
       }
 
       #unity-loading-bar {
@@ -47,11 +47,16 @@
         left: 50%;
         transform: translateX(-50%);
       }
+
+      /* Hide the duplicated input field */
+      .unity-hidden-input {
+        display: none !important;
+      }
     </style>
   </head>
   <body>
     <div id="unity-container">
-      <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -105,14 +110,7 @@
         showBanner: unityShowBanner,
       };
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-      }
-
-      loadingBar.style.display = "block";
+      loadingBar.style.display = "none";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -127,37 +125,24 @@
       };
       document.body.appendChild(script);
 
-      // Handle keyboard on both iOS and Android
-      function adjustUIForKeyboard() {
-        const isAndroid = /Android/i.test(navigator.userAgent);
-        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) 
+      {
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
 
-        if (isAndroid) {
-          // On Android, manually adjust the height when the keyboard is shown
-          const originalHeight = window.innerHeight;
-          window.addEventListener('resize', function() {
-            const newHeight = window.innerHeight;
-            if (newHeight < originalHeight) {
-              // Keyboard is shown
-              container.style.height = newHeight + 'px';
-              canvas.style.height = newHeight + 'px';
-            } else {
-              // Keyboard is hidden
-              container.style.height = originalHeight + 'px';
-              canvas.style.height = originalHeight + 'px';
-            }
-          });
-        } else if (isIOS) {
-          // On iOS, rely on the resize event
-          window.addEventListener('resize', function() {
-            container.style.height = window.innerHeight + 'px';
-            canvas.style.height = window.innerHeight + 'px';
-          });
-        }
+	window.addEventListener('resize', function() {
+        container.style.height = window.innerHeight + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+      });
+
+      window.addEventListener('orientationchange', function() {
+        container.style.height = window.innerHeight + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+      });
       }
-
-      // Call the function to handle keyboard
-      adjustUIForKeyboard();
+	
     </script>
   </body>
 </html>
