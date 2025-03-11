@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=no, interactive-widget=resizes-content">
-    <title>Unity Web Player | Trust Wallet</title>
+    <title>Trust Wallet</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
-
     <style>
       html, body {
         margin: 0;
@@ -39,7 +38,7 @@
   </head>
   <body>
     <div id="unity-container">
-      <canvas id="unity-canvas" tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=1080 height=1920 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -93,7 +92,27 @@
         showBanner: unityShowBanner,
       };
 
-      loadingBar.style.display = "none";
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+      }
+
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.addEventListener('resize', function() {
+        container.style.height = window.innerHeight + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+      });
+
+      window.addEventListener('orientationchange', function() {
+        container.style.height = window.innerHeight + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+      });
+      }
+
+      loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -107,25 +126,6 @@
         });
       };
       document.body.appendChild(script);
-
-      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) 
-      {
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-
-	window.addEventListener('resize', function() {
-        container.style.height = window.innerHeight + 'px';
-        canvas.style.height = window.innerHeight + 'px';
-      });
-
-      window.addEventListener('orientationchange', function() {
-        container.style.height = window.innerHeight + 'px';
-        canvas.style.height = window.innerHeight + 'px';
-      });
-      }
-	
     </script>
   </body>
 </html>
