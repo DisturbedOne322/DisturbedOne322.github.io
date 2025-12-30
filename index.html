@@ -45,10 +45,10 @@
             <a class="nav-link js-scroll-trigger" href="#experience">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
@@ -68,12 +68,11 @@
             <span class="text-primary">Yaroslav</span>
           </h1>
           <div class="subheading mb-5">(098) 900-35-90 ·
-            <a href="mailto:name@email.com">andrianovyaroslav27@gmail.com</a>
+            <a href="mailto:andrianovyaroslav27@gmail.com">andrianovyaroslav27@gmail.com</a>
           </div>
-          <p class="mb-1">Unity Developer with 3 years of Unity development experience, including 1 year of commercial experience. I specialize in programming and tool creation. 
-            Published a vehicle physics package on the Unity Asset Store. Published a complete 2D Horror game. </p>
-          <p class="mb-1">Always eager to learn something new, striving to grow as a developer. Keen on learning new technologies and coding styles that help make better projects.</p>
-          <p class="mb-1">I am enthusiastic about working in a professional environment and learning from others.</p>
+          <p class="mb-1">Unity Developer with 3 years of experience, including 1 year of commercial work. I specialize in gameplay systems, tools development and performance-oriented architecture.</p>
+          <p class="mb-1">I have published a vehicle physics package on the Unity Asset Store and a complete 2D horror game. My work focuses on clean code, scalability and developer-friendly workflows.</p>
+          <p class="mb-1">I am highly motivated to grow as an engineer and enjoy working on technically challenging systems alongside experienced developers.</p>
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">
               <a href="https://www.youtube.com/@DisturbedOne69/featured">
@@ -108,43 +107,8 @@
 
           <h2 class="mb-5">Projects</h2>
 
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto" style="width: 100%;">
-              <h3 class="mb-0">Multiplayer Racing Game</h3>
-              <p>A prototype of a racing game made with Netcode for GameObjects</p>
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cg8_DVdXGBA?si=xxwAXvphL9aFD7Ip" frameborder="0" allow="clipboard-write; encrypted-media;picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
-              <br>
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YOqH3dkmz2c?si=NYRNiRjFS5W0MYSl" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
-              <br>
-              <h5 class="mb-1">Short Description:</h5>
-              <p>Using my own vehicle physics package and Unity's Netcode for GameObjects multiplayer solution, I made a functioning prototype of a racing game. The game uses Relay and Lobby packages for handling lobbies. The game features 1 map with a sprint race, traffic and chat systems.</p>
-              <h5 class="mb-1">Skills learned:</h5>
-              <ul class="fa-ul mb-0">
-                <li>
-                  <i class="fa-li fa fa-circle"></i>
-                  Netcode for GameObjects</li>
-                <li>
-                  <i class="fa-li fa fa-circle"></i>
-                  Lobby and Relay packages</li>
-                <li>
-                  <i class="fa-li fa fa-circle"></i>
-                  Lighting Baking</li>
-                <li>
-                  <i class="fa-li fa fa-circle"></i>
-                  Static Batching and Occlusion Culling</li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">February 2024 - April 2024</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto" style="width: 100%;">
+            <div class="resume-item d-flex flex-column flex-md-row mb-5">
+              <div class="resume-content mr-auto" style="width: 100%;">
               <h3 class="mb-0"><a href="https://assetstore.unity.com/packages/tools/physics/custom-vehicle-controller-278027">Custom Vehicle Controller</a></h3>
               <p>Vehicle Physics Package</p>
               <div class="embed-responsive embed-responsive-16by9">
@@ -152,13 +116,19 @@
               </div>
               <br>
               <h5 class="mb-1">Short Description:</h5>
-              <p>I made and published a vehicle physics package on the Unity Asset Store. 
-                The package has a custom editor window made with the UI Toolkit, which provides a quick workflow with the asset. 
-                The asset allows you to quickly setup the controller, create and modify parts from the editor window and save parts presets. 
-                In the core the physics system uses the default Rigidbody component and the logic for every vehicle part, such as suspension, 
-                tyres, transmission, was written by me.</p>
+              <p>I designed and published a modular vehicle physics package on the Unity Asset Store, focused on extensibility, performance, and editor-friendly workflows.
+                At its core, the system is built on Unity’s Rigidbody physics and custom logic for vehicle subsystems such as suspension, tires, engine and so on. 
+                All systems are designed to be modular and configurable through custom editor tools built with UI Toolkit. 
+                </p>
+              <p>
+                Over multiple updates, I expanded the package with many updates, most notable ones being racing AI, a vehicle damage system with mesh deformation and engine performance customization. 
+                AI racers use a context-based steering approach combined with state-based behavior, while race progression and positioning are tracked through a centralized race management system.
+                The damage system supports both visual mesh deformation and individual vehicle part damage. 
+                Mesh deformation is calculated based on collision data and optimized using Unity’s Job System.
+              </p>
+                <p><a href="https://www.youtube.com/@DisturbedOne69/featured">You can see more showcases of my work on my YT channel.</a></p>
                 <p><a href="https://assetstore.unity.com/packages/tools/physics/custom-vehicle-controller-278027">Link to the Asset Store page.</a></p>
-              <h5 class="mb-1">Skills learned:</h5>
+              <h5 class="mb-1">Technical highlights:</h5>
               <ul class="fa-ul mb-0">
                 <li>
                   <i class="fa-li fa fa-circle"></i>
@@ -183,6 +153,82 @@
           </div>
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
+              <div class="resume-content mr-auto" style="width: 100%;">
+              <h3 class="mb-0"><a href="https://github.com/DisturbedOne322/BulletHeaven">Bullet Heaven Game</a></h3>
+              <p>A game designed to handle very high enemy counts, optimized with DOTS.</p>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/bMMflOHKZb4?si=yopSnJAOLUzaQBAS" frameborder="0" allow="clipboard-write; encrypted-media;picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <br>
+              <h5 class="mb-1">Short Description:</h5>
+              <p> A Vampire Survivors-inspired bullet heaven game built to handle a very high number of enemies efficiently. 
+                The core gameplay revolves around defeating large enemy waves to gain experience and unlock upgrades. 
+                The game features 6 unique abilities, each with its own progression system, as well as global passive modifiers that dynamically affect compatible abilities. 
+                The project was designed with performance as a primary goal and implemented using Unity DOTS, Jobs, and Burst to efficiently process large numbers of entities. 
+                Gameplay logic is data-oriented, with systems operating on entity queries rather than individual objects, allowing the game to scale under heavy load.</p>
+              <h5 class="mb-1">Tech stack:</h5>
+              <ul class="fa-ul mb-0">
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  DOTS</li>
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  Jobs, Burst</li>
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  Addressables</li>
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  Zenject</li>
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  UniTask</li>
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  DOTween</li>
+              </ul>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">March 2025 - May 2025</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto" style="width: 100%;">
+              <h3 class="mb-0">Multiplayer Racing Game</h3>
+              <p>A prototype of a racing game made with Netcode for GameObjects</p>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cg8_DVdXGBA?si=xxwAXvphL9aFD7Ip" frameborder="0" allow="clipboard-write; encrypted-media;picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <br>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YOqH3dkmz2c?si=NYRNiRjFS5W0MYSl" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+              <br>
+              <h5 class="mb-1">Short Description:</h5>
+              <p>Using my own vehicle physics package and Unity's Netcode for GameObjects multiplayer solution, I made a functioning prototype of a racing game. The game uses Relay and Lobby packages for handling lobbies. The game has one map featuring a sprint race mode, traffic and chat systems.</p>
+              <h5 class="mb-1">Technical highlights:</h5>
+              <ul class="fa-ul mb-0">
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  Netcode for GameObjects</li>
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  Lobby and Relay packages</li>
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  Light Baking</li>
+                <li>
+                  <i class="fa-li fa fa-circle"></i>
+                  Static Batching and Occlusion Culling</li>
+              </ul>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">February 2024 - April 2024</span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto" style="width: 100%;">
               <h3 class="mb-0">Subterror</h3>
               <p>2D Horror game made in URP</p>
@@ -191,12 +237,12 @@
               </div>
               <br>
               <h5 class="mb-1">Short Description:</h5>
-              <p>This is a 2D platformer shooter horror game. Game was made using the Universal Render Pipeline. The game features enemy AI, different levels, post processing, custom shaders and visual effects, quick time events and boss fights. The save system was implemented using JSON serialization.</p>
-              <h5 class="mb-1">Skills learned:</h5>
+              <p>This is a 2D platformer shooter horror game. The game was made using the Universal Render Pipeline. The game features enemy AI, different levels, post processing, custom shaders and visual effects, quick time events and boss fights. The save system was implemented using JSON serialization.</p>
+              <h5 class="mb-1">Technical highlights:</h5>
               <ul class="fa-ul mb-0">
                 <li>
                   <i class="fa-li fa fa-circle"></i>
-                  SOLID Pattern</li>
+                  SOLID principles</li>
                 <li>
                   <i class="fa-li fa fa-circle"></i>
                   State Pattern</li>
@@ -211,89 +257,24 @@
                   Save System with JSON Serialization</li>
                 <li>
                   <i class="fa-li fa fa-circle"></i>
-                  Object Pool Optimization Technique</li>
+                  Object pooling for performance optimization</li>
               </ul>
             </div>
             <div class="resume-date text-md-right">
               <span class="text-primary">June 2023 - September 2023</span>
             </div>
           </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto" style="width: 100%;">
-              <h3 class="mb-0">Racing AI</h3>
-              <p>AI made with context-based steering algorithm</p>
-              <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Tk_j7jt_fMw?si=BKOyflB8ozsiD2Kw" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
-              <br>
-              <h5 class="mb-1">Short Description:</h5>
-              <p>I made an update for my vehicle physics package that introduced AI Racers and race management system. The AI was implemented using the context-based steering and state pattern. I wrote custom code for the racer's position evaluation along the spline using Unity's Job System because the built-in method had very low performance. Race management system keeps track of each race participant's progress and sends race related events to the event listeners.</p>
-              <h5 class="mb-1">Skills learned:</h5>
-              <ul class="fa-ul mb-0">
-                <li>
-                  <i class="fa-li fa fa-circle"></i>
-                  Context-Based Steering Algorithm</li>
-                <li>
-                  <i class="fa-li fa fa-circle"></i>
-                  Job System (basics)</li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">May 2024 - June 2024</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto" style="width: 100%;">
-            <h3 class="mb-0">Vehicle Damage System</h3>
-            <p>Vehicle damage system with mesh deformation and other effects</p>
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ErYNCIz7jG4?si=CixS5a2cI9TJyxpF" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <br>
-            <h5 class="mb-1">Short Description:</h5>
-            <p>I made an update for my vehicle physics package that added a vehicle damage system with mesh deformation and individual parts damage system.
-              The mesh is deformed based on collision points and parameters set by the user that define the effect of deformation. Deformation is performed by finding and modifying the position of the vertices near the impact zone.
-              The algorithm uses multithreading with the Jobs System. Optionally, the user can also define possible collision areas and store the indexes of vertices that belong to each area. When the collision occurs, 
-              the code find in what area the collision occured and modifies only the vertices inside it, therefore lowering the amount of work that needs to be done.
-              Vehicle part damage is another system, which controls the hit points of parts and makes them dangle and/or detach with certain conditions.</p>
-            <h5 class="mb-1">Skills learned:</h5>
-            <ul class="fa-ul mb-0">
-              <li>
-                <i class="fa-li fa fa-circle"></i>
-                Mesh Deformation</li>
-              <li>
-                <i class="fa-li fa fa-circle"></i>
-                Job System (basics)</li>
-            </ul>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">July 2024 - August 2024</span>
-          </div>
         </div>
       </div>
 
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-          <h2 class="mb-5">Education</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">European University (Kyiv, Ukraine)</h3>
-              <div class="subheading mb-3">Bachelor Degree</div>
-              <div>Software Engineering Faculty</div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">September 2021 - June 2025</span>
-            </div>
-          </div>
-      </section>
+      
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
           <h2 class="mb-5">Skills</h2>
+          <p>My main focus is on gameplay systems, performance, and developer tooling in Unity.</p>
+
           <div class="subheading mb-3">Programming Languages &amp; Tools</div>
           <ul class="list-inline list-icons">
             <li class="list-inline-item">
@@ -313,51 +294,67 @@
             </li>
           </ul>
 
-          <div class="subheading mb-3">Programming skills</div>
+          <div class="subheading mb-3">Core skills</div>
           <ul class="fa-ul mb-0">
             <li>
               <i class="fa-li fa fa-circle"></i>
-              OOP</li>
+              Data-driven gameplay systems architecture</li>
             <li>
               <i class="fa-li fa fa-circle"></i>
-              Asynchronous Programming (UniTask)</li>
+              Performance-oriented programming (DOTS, Jobs, Burst)</li>
             <li>
               <i class="fa-li fa fa-circle"></i>
-              Reactive Programming (UniRx)</li>
+              Asynchronous gameplay flow (UniTask, CancellationTokens)</li>
             <li>
               <i class="fa-li fa fa-circle"></i>
-              DI with Zenject</li>
+              Dependency injection and decoupling (Zenject)</li>
             <li>
               <i class="fa-li fa fa-circle"></i>
-              Design Patterns</li>
-            <li>
-              <i class="fa-li fa fa-circle"></i>
-              IoC, KISS, DRY</li>
-            <li>
-              <i class="fa-li fa fa-circle"></i>
-              Data Structures</li>
+              Reactive programming & event-driven architecture (UniRx)</li>
           </ul>
 
           <br>
-          <div class="subheading mb-3">Basic Knowledge</div>
+          <div class="subheading mb-3">Tools and frameworks</div>
           <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-circle"></i>
+              UI Toolkit (custom editor tools)</li>
+            <li>
+              <i class="fa-li fa fa-circle"></i>
+              Netcode for GameObjects (Lobby, Relay)</li>
+            <li>
+              <i class="fa-li fa fa-circle"></i>
+              Addressables</li>
             <li>
               <i class="fa-li fa fa-circle"></i>
               Shader Graph</li>
             <li>
               <i class="fa-li fa fa-circle"></i>
               Visual Effect Graph</li>
-            <li>
-              <i class="fa-li fa fa-circle"></i>
-              UI Toolkit</li>
-            <li>
-              <i class="fa-li fa fa-circle"></i>
-              Jobs / Burst</li>
-            <li>
-            <i class="fa-li fa fa-circle"></i>
-              Netcode for GameObjects</li>
           </ul>
+
           <br>
+          <div class="subheading mb-3">Software Engineering Fundamentals</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-circle"></i>
+              Object-oriented design</li>
+            <li>
+              <i class="fa-li fa fa-circle"></i>
+              SOLID principles</li>
+            <li>
+              <i class="fa-li fa fa-circle"></i>
+              Common design patterns (State, Command, Observer, Strategy, Factory)</li>
+            <li>
+              <i class="fa-li fa fa-circle"></i>
+              Clean code practices (KISS, DRY)</li>
+            <li>
+              <i class="fa-li fa fa-circle"></i>
+              Data structures and algorithms</li>
+          </ul>
+
+          <br>
+
           <div class="subheading mb-3">Languages</div>
           <ul class="fa-ul mb-0">
             <li>
@@ -370,9 +367,24 @@
         </div>
       </section>
 
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+          <h2 class="mb-5">Education</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">European University (Kyiv, Ukraine)</h3>
+              <div class="subheading mb-3">Bachelor Degree</div>
+              <div>Software Engineering Faculty</div>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary">September 2021 - June 2025</span>
+            </div>
+          </div>
+      </section>
+
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="interests">
           <h2 class="mb-5">Interests</h2>
-          <p>Apart from being a game developer, I enjoy most of my time being indoors. I enjoy music a lot, so I started learning to play electric guitar 3 years ago.</p>
+          <p>Outside of development, I enjoy music and video games. I started learning to play electric guitar 3 years ago, focusing on metal music. Currenty I am also learning music theory.</p>
           <p>I also really like video games, especially the ones with progression system, so racing games, RPGs, MMORPGs, and so on. My favorite games are Final Fantasy XIV, NFS ProStreet, Dragon's Dogma: Dark Arisen, Silent Hill 2, Resident Evil 2 Remake, Persona 5</p>
       </section>
 
