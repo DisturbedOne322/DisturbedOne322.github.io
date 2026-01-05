@@ -71,7 +71,7 @@
             <a href="mailto:andrianovyaroslav27@gmail.com">andrianovyaroslav27@gmail.com</a>
           </div>
           <p class="mb-1">Unity Developer with 3 years of experience, including 1 year of commercial work. I specialize in gameplay systems, tools development and performance-oriented architecture.</p>
-          <p class="mb-1">I have published a vehicle physics package on the Unity Asset Store and a complete 2D horror game. My work focuses on clean code, scalability and developer-friendly workflows.</p>
+          <p class="mb-1">I am the author of a modular vehicle physics package published on the Unity Asset Store, where I focus on extensibility, editor tools, and scalable system design. My work focuses on clean code, scalability and developer-friendly workflows.</p>
           <p class="mb-1">I am highly motivated to grow as an engineer and enjoy working on technically challenging systems alongside experienced developers.</p>
           <ul class="list-inline list-social-icons mb-0">
             <li class="list-inline-item">
@@ -119,9 +119,10 @@
               <p>I designed and published a modular vehicle physics package on the Unity Asset Store, focused on extensibility, performance, and editor-friendly workflows.
                 At its core, the system is built on Unity’s Rigidbody physics and custom logic for vehicle subsystems such as suspension, tires, engine and so on. 
                 All systems are designed to be modular and configurable through custom editor tools built with UI Toolkit. 
+                The architecture prioritizes modularity and separation of concerns, allowing new vehicle features and AI behaviors to be added without modifying existing systems.
                 </p>
               <p>
-                Over multiple updates, I expanded the package with many updates, most notable ones being racing AI, a vehicle damage system with mesh deformation and engine performance customization. 
+                Over multiple updates, I expanded the package with multiple major updates, most notable ones being racing AI, a vehicle damage system with mesh deformation and engine performance customization. 
                 AI racers use a context-based steering approach combined with state-based behavior, while race progression and positioning are tracked through a centralized race management system.
                 The damage system supports both visual mesh deformation and individual vehicle part damage. 
                 Mesh deformation is calculated based on collision data and optimized using Unity’s Job System.
@@ -162,10 +163,11 @@
               <br>
               <h5 class="mb-1">Short Description:</h5>
               <p> A Vampire Survivors-inspired bullet heaven game built to handle a very high number of enemies efficiently. 
-                The core gameplay revolves around defeating large enemy waves to gain experience and unlock upgrades. 
+                The core gameplay revolves around defeating enemy waves to gain experience and unlock upgrades. 
                 The game features 6 unique abilities, each with its own progression system, as well as global passive modifiers that dynamically affect compatible abilities. 
                 The project was designed with performance as a primary goal and implemented using Unity DOTS, Jobs, and Burst to efficiently process large numbers of entities. 
-                Gameplay logic is data-oriented, with systems operating on entity queries rather than individual objects, allowing the game to scale under heavy load.</p>
+                Gameplay logic is data-oriented, with systems operating on entity queries rather than individual objects, allowing the game to scale under heavy load.
+                Systems were designed to operate on data batches rather than individual entities, minimizing structural changes and improving cache efficiency.</p>
               <h5 class="mb-1">Tech stack:</h5>
               <ul class="fa-ul mb-0">
                 <li>
@@ -195,14 +197,14 @@
 
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto" style="width: 100%;">
-              <h3 class="mb-0">Multiplayer Racing Game</h3>
+              <h3 class="mb-0">Multiplayer Racing Game (Prototype)</h3>
               <p>A prototype of a racing game made with Netcode for GameObjects</p>
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cg8_DVdXGBA?si=xxwAXvphL9aFD7Ip" frameborder="0" allow="clipboard-write; encrypted-media;picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              </div>
-              <br>
-              <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YOqH3dkmz2c?si=NYRNiRjFS5W0MYSl" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </div>
+                            <br>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cg8_DVdXGBA?si=xxwAXvphL9aFD7Ip" frameborder="0" allow="clipboard-write; encrypted-media;picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <br>
               <h5 class="mb-1">Short Description:</h5>
@@ -310,7 +312,7 @@
               Dependency injection and decoupling (Zenject)</li>
             <li>
               <i class="fa-li fa fa-circle"></i>
-              Reactive programming & event-driven architecture (UniRx)</li>
+              Reactive and event-driven programming (UniRx)</li>
           </ul>
 
           <br>
